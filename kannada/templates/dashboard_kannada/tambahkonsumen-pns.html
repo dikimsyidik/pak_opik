@@ -1,0 +1,356 @@
+{% extends 'dashboard_kannada/base.html' %}
+{% block content %}
+{% load static %}						<!-- Page content -->
+						<div class="container-fluid pt-8">
+							<div class="page-header mt-0 shadow p-3">
+								<ol class="breadcrumb mb-sm-0">
+									<li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+									<li class="breadcrumb-item active" aria-current="page">Tambah Konsumen</li>
+								</ol>
+								<a href="{% url 'tambah_pns' %}"><button class="btn btn-outline-primary mt-1 mb-1 active" style="width: 200px;">PNS</button></a>
+								<a href="{% url 'tambah_pegawai_swasta' %}"><button class="btn btn-outline-primary mt-1 mb-1" style="width: 200px;">Pegawai Swasta</button></a>
+								<a href="{% url 'tambah_wiraswasta' %}"><button class="btn btn-outline-primary mt-1 mb-1" style="width: 200px;">Wiraswasta</button></a>
+							</div>
+						</div>
+				<form method="POST"  enctype="multipart/form-data">{% csrf_token %}
+					<!-- IDENTITAS -->
+					<div class="container-fluid pt-2">
+						<div class="row">
+							<div class="col-xl-12">
+								<div class="card m-b-20">
+									<div class="card-header">
+										<h2 class="mb-0">Identitas</h2>
+									</div>
+									<div class="card-body">
+										
+											<div id="basicwizard" class="border pt-0">
+												<ul class="nav nav-tabs nav-justified">
+													<li class="nav-item"><a href="#tab1" data-toggle="tab" class="nav-link font-bold">Identitas Pemohon</a></li>
+													<li class="nav-item"><a href="#tab2" data-toggle="tab" class="nav-link font-bold">Identitas Pasangan</a></li>
+													<li class="nav-item"><a href="#tab3" data-toggle="tab" class="nav-link font-bold">Identitas Keluaga Terdekat</a></li>
+												</ul>
+												<div class="tab-content card-body  b-0 mb-0">
+													<div class="tab-pane fade" id="tab1">
+														<div class="card-body">
+															<div class="row">
+																<div class="col-md-6">
+																	<div class="form-group">
+																		<label class="form-label">Kavling</label>
+																		{{ form.kavling }}
+																	</div>
+																	<div class="form-group">
+																		<label class="form-label">No. KTP</label>{{ form.no_ktp }}
+																		
+																	</div>
+																	<div class="form-group">
+																		<label class="form-label">Nama</label>
+																		{{ form.nama }}
+																	</div>
+																	<div class="form-group">
+																		<label class="form-label">Tempat Lahir</label>
+																		{{ form.tempat_lahir }}
+																		
+																	</div>
+																	<div class="form-group">
+																		<label class="form-label">Tanggal Lahir</label>
+																		<div class="input-group ">
+																			<div class="input-group-prepend">
+																				<span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
+																			</div>
+																		{{ form.tanggal_lahir }}
+																			
+																		</div>
+																	</div>
+																</div>
+																<div class="col-md-6">
+																	<div class="form-group">
+																		<label class="form-label">Alamat</label>
+																		{{ form.alamat }}
+																		
+																	</div>
+																	<div class="form-group">
+																		<label class="form-label">Pekerjaan</label>
+																		{{ form.pekerjaan }}
+																		
+																	</div>
+																	<div class="form-group">
+																		<label class="form-label">No. Hp</label>
+																		{{ form.no_hp }}
+																		
+																	</div>
+																</div>		
+															</div>
+														</div>
+													</div>
+													<div class="tab-pane fade" id="tab2">
+														<div class="card-body">
+															<div class="row">
+																<div class="col-md-6">
+																	<div class="form-group">
+																		<label class="form-label">Nama</label>
+																		{{ form.nama_pasangan }}
+																		
+																	</div>
+																	<div class="form-group">
+																		<label class="form-label">No KTP</label>
+																		{{ form.no_ktp_pasangan }}
+																		
+																	</div>
+																	<div class="form-group">
+																		<label class="form-label">Tempat Lahir</label>
+																		{{ form.tempat_lahir_pasangan }}
+																		
+																	</div>
+																	<div class="form-group">
+																		<label class="form-label">Tanggal Lahir</label>
+
+																		<div class="input-group ">
+																			<div class="input-group-prepend">
+																				<span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
+																			</div>
+																			{{ form.tanggal_lahir_pasangan }}
+																			
+																		</div>
+																	</div>
+																</div>
+																<div class="col-md-6">
+																	<div class="form-group">
+																		<label class="form-label">Alamat</label>
+																		{{ form.alamat_pasangan }}
+																		
+																	</div>
+																	<div class="form-group">
+																		<label class="form-label">Pekerjaan</label>
+																		{{ form.pekerjaan_pasangan }}
+																		
+																	</div>
+																	<div class="form-group">
+																		<label class="form-label">No. Hp</label>
+																		{{ form.no_hp_pasangan }}
+																		
+																	</div>
+																</div>		
+															</div>
+														</div>
+													</div>
+													<div class="tab-pane fade" id="tab3">
+														<div class="card-body">
+															<div class="row">
+																<div class="col-md-6">
+																	<div class="form-group">
+																		<label class="form-label">Nama</label>
+																		{{ form.nama_keluarga }}
+																	
+																	</div>
+																	<div class="form-group">
+																		<label class="form-label">No Ktp</label>{{ form.no_ktp_keluarga }}
+
+																		
+																	</div>
+																	<div class="form-group">
+																		<label class="form-label">No. Hp</label>
+																		{{ form.no_hp_keluarga}}
+																		
+																	</div>
+
+																</div>
+																<div class="col-md-6">
+																	<div class="form-group">
+																		<label class="form-label">Alamat</label>
+																		{{ form.alamat_keluarga }}
+																		
+																	</div>
+																	
+																</div>		
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- IDENTITAS END -->
+
+					<!-- Upload & Chekboxs-->
+					<div class="col-md-12">
+						<div class="card shadow">
+							<div class="card-header">
+								<h2 class="mb-0">Persyaratan</h2>
+							</div>
+							<div class="card-body accordion2">
+								<div class="panel-group1" id="accordion1">
+									<div class="panel panel-default mb-4">
+										<div class="panel-heading1 ">
+											<h4 class="panel-title1">
+												<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion1" href="#collapseFour" aria-expanded="false">Persyaratan Khusus</a>
+											</h4>
+										</div>
+										<div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-expanded="false">
+											<div class="panel-body">
+												<div class="row">
+													<div class="col-lg-4">
+														<div class="card shadow">
+															<div class="card-header">
+																<h2 class="mb-0">KTP</h2>
+															</div>
+															<div class="card-body">
+																{{ form.ktp }}
+																
+															</div>
+														</div>
+													</div>
+													<div class="col-lg-4">
+														<div class="card shadow">
+															<div class="card-header">
+																<h2 class="mb-0">Kartu Keluarga</h2>
+															</div>
+															<div class="card-body">
+																{{ form.kartu_keluarga }}
+															</div>
+														</div>
+													</div>
+													<div class="col-lg-4">
+														<div class="card shadow">
+															<div class="card-header">
+																<h2 class="mb-0">Buku Nikah</h2>
+															</div>
+															<div class="card-body">
+																{{ form.buku_nikah }}
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-lg-4">
+														<div class="card shadow">
+															<div class="card-header">
+																<h2 class="mb-0">NPWP</h2>
+															</div>
+															<div class="card-body">
+																{{ form.npwp }}
+															</div>
+														</div>
+													</div>
+													<div class="col-lg-4">
+														<div class="card shadow">
+															<div class="card-header">
+																<h2 class="mb-0">Keterangan Penghasilan</h2>
+															</div>
+															<div class="card-body">
+																{{ form.keteranganpenghasilan }}
+															</div>
+														</div>
+													</div>
+													<div class="col-lg-4">
+														<div class="card shadow">
+															<div class="card-header">
+																<h2 class="mb-0">Foto</h2>
+															</div>
+															<div class="card-body">
+																{{ form.foto }}
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-lg-4">
+														<div class="card shadow">
+															<div class="card-header">
+																<h2 class="mb-0">Rekening Koran</h2>
+															</div>
+															<div class="card-body">
+																{{ form.rekening_koran }}
+															</div>
+														</div>
+													</div>
+													<div class="col-lg-4">
+														<div class="card shadow">
+															<div class="card-header">
+																<h2 class="mb-0">SK Bekerja</h2>
+															</div>
+															<div class="card-body">
+																{{ form.sk_bekerja }}
+															</div>
+														</div>
+													</div>
+													<div class="col-lg-4">
+														<div class="card shadow">
+															<div class="card-header">
+																<h2 class="mb-0">Slip Gaji</h2>
+															</div>
+															<div class="card-body">
+																{{ form.sliip_gaji }}
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="panel panel-default">
+										<div class="panel-heading1">
+											<h4 class="panel-title1">
+												<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion1" href="#collapseFive" aria-expanded="false">Progres</a>
+											</h4>
+										</div>
+										<div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-expanded="false">
+											<div class="row">
+												<div class="col-xl-6">
+													<div class="panel-body ">
+														<div class="custom-control custom-checkbox mb-3">
+															{{ form.dc }}
+															<label class="custom-control-label" for="customCheck1">DC</label>
+															{{ form.ket_dc }}
+														</div>
+
+														<div class="custom-control custom-checkbox mb-3">
+															{{ form.slik }}
+															<label class="custom-control-label" for="customCheck2">SLIK</label>
+															{{ form.ket_slik }}
+														</div>
+														<div class="custom-control custom-checkbox mb-3">
+															{{ form.wawancara }}
+															<label class="custom-control-label" for="customCheck3">Wawancara</label>
+															{{ form.ket_wawancara }}
+														</div>
+													</div>
+												</div>
+												
+
+												<div class="col-xl-6">
+													<div class="panel-body ">
+														<div class="custom-control custom-checkbox mb-3">
+															{{ form.ots }}
+															<label class="custom-control-label" for="customCheck4">OTS</label>
+															{{ form.ket_ots }}
+														</div>
+														<div class="custom-control custom-checkbox mb-3">
+															{{ form.sp3k }}	
+
+															<label class="custom-control-label" for="customCheck5">SP3K</label>
+															{{ form.ket_ots }}
+														</div>
+														<div class="custom-control custom-checkbox mb-3">
+															{{ form.akad }}
+															<label class="custom-control-label" for="customCheck6">Akad</label>
+															{{ form.ket_akad }}
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<button type="submit" class="btn btn-primary mt-0 mb-5" style="width: 100px; margin-left: 85%">SIMPAN</button>
+				</form>
+
+
+{% endblock %}
+<script src="{% static "assets/plugins/fileuploads/js/dropify.min.js" %}"></script>

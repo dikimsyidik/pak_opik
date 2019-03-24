@@ -1,0 +1,117 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+
+<head>
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+	<meta content="Start your development with a Dashboard for Bootstrap 4." name="description">
+	<meta content="Spruko" name="author">
+
+	<!-- Title -->
+	<title>Pastel Programmer</title>
+
+	<!-- Favicon -->
+	<!-- Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800" rel="stylesheet">
+
+	<!-- Icons -->
+	<link href="{% static "assets/css/icons.css" %}" rel="stylesheet">
+
+	<!--Bootstrap.min css-->
+	<link rel="stylesheet" href="{% static "assets/plugins/bootstrap/css/bootstrap.min.css" %}">
+
+	<!-- Dashboard CSS -->
+	<link href="{% static "assets/css/dashboard.css" %}" rel="stylesheet" type="text/css">
+
+	<!-- Tabs CSS -->
+	<link href="{% static "assets/plugins/tabs/style.css" %}" rel="stylesheet" type="text/css">
+
+	<!-- Custom scroll bar css-->
+	<link href="{% static "assets/plugins/customscroll/jquery.mCustomScrollbar.css" %}" rel="stylesheet" />
+
+	<!-- Sidemenu Css -->
+	<link href="{% static "assets/plugins/toggle-sidebar/css/sidemenu.css" %}" rel="stylesheet">
+
+	<!-- form Uploads -->
+    <link href="{% static "assets/plugins/fileuploads/css/dropify.css" %}" rel="stylesheet" type="text/css" />
+
+</head>
+<body class="bg-primary" >
+<form method="POST">{% csrf_token %}
+	<div class="container pt-5">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="card shadow">
+					<div class="card-header">
+						<h2 class="mb-0" style="text-align: center; color: #00c3ed">Kegiatan Marketer</h2>
+					</div>
+					<div class="card-body">
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									<input type="text" class="form-control" name="example-disabled-input" placeholder="Tanggal" value="" disabled>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									{{ form.marketer }}
+									
+								</div>
+							</div>
+							<div class="col-md-12 mb-3">
+								{{ form.judul_kegiatan }}
+							</div>
+							<div class="col-md-12">
+								{{ form.deskripsi }}
+							</div>
+							<div class="col-sm-12 offset mt-5">
+								<button class="btn btn-outline-primary mt-0 mb-5" type="submit" style="float: right; margin-right: 10%">SIMPAN</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>
+					
+	
+	<!-- Back to top -->
+	<a href="#top" id="back-to-top"><i class="fa fa-angle-up"></i></a>
+
+	<!-- Ansta Scripts -->
+	<!-- Core -->
+	<script src="{% static "assets/plugins/jquery/dist/jquery.min.js" %}"></script>
+	<script src="{% static "assets/js/popper.js" %}"></script>
+	<script src="{% static "assets/plugins/bootstrap/js/bootstrap.min.js" %}"></script>
+	
+
+	<script src="{% static "assets/plugins/chart.js/dist/Chart.min.js" %}"></script>
+	<script src="{% static "assets/plugins/chart.js/dist/Chart.extension.js" %}"></script>
+
+	<!-- Data tables -->
+	<script src="{% static "assets/plugins/datatable/jquery.dataTables.min.js" %}"></script>
+	<script src="{% static "assets/plugins/datatable/dataTables.bootstrap4.min.js" %}"></script>
+
+
+	<script src="{% static "assets/plugins/toggle-sidebar/js/sidemenu.js" %}"></script>
+
+	<!-- Custom scroll bar Js-->
+	<script src="{% static "assets/plugins/customscroll/jquery.mCustomScrollbar.concat.min.js" %}"></script>
+
+	<!-- Ansta JS -->
+	<script src="{% static "assets/js/custom.js" %}"></script>
+
+	<!-- Date Picker-->
+	
+	<!-- Form wizard js -->
+	<script src="{% static "assets/plugins/bootstrap-wizard/jquery.bootstrap.wizard.js" %}"></script>
+	<script src="{% static "assets/js/wizard.js" %}"></script>
+
+
+</body>
+
+
+</html>

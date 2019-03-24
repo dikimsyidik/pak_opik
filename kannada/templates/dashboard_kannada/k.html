@@ -1,0 +1,229 @@
+<div class="card shadow">
+        <div class="card-header">
+            <h2 class="mb-0">Persyaratan</h2>
+        </div>
+        <div class="card-body accordion2">
+            <div class="panel-group1" id="accordion1">
+                <div class="panel panel-default mb-4">
+                    <div class="panel-heading1 ">
+                        <h4 class="panel-title1">
+                            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion1" href="#collapseFour" aria-expanded="false">Persyaratan Khusus</a>
+                        </h4>
+                    </div>
+                    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-expanded="false">
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="card shadow">
+                                        <div class="card-header">
+                                            <h2 class="mb-0">KTP
+                                            </h2>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="fileupload fileupload-new" data-provides="fileupload">
+                                                <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;"><img src="{{ form.instance.ktp.url }}" alt="" /></div>
+                                                <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
+                                                <div>
+                                                    <span class="btn btn-file btn-primary"><span class="fileupload-new">Ganti</span><span class="fileupload-exists">Ganti</span>{{ form.ktp }}</span>
+                                                    <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload">Batal</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="card shadow">
+                                        <div class="card-header">
+                                            <h2 class="mb-0">Kartu Keluarga</h2>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="fileupload fileupload-new" data-provides="fileupload">
+                                                <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;"><img src="{{ form.instance.kartu_keluarga.url }}" alt="" />
+                                                </div>
+                                                <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;">
+                                                </div>
+                                                <div>
+                                                    <span class="btn btn-file btn-primary"><span class="fileupload-new">Ganti</span><span class="fileupload-exists">Ganti</span>{{ form.kartu_keluarga }}</span>
+                                                    <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload">Batal</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="card shadow">
+                                        <div class="card-header">
+                                            <h2 class="mb-0">Buku Nikah</h2>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="fileupload fileupload-new" data-provides="fileupload">
+                                                <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+                                                    <img src="{{ form.instance.buku_nikah.url }}" alt="" />
+                                                </div>
+                                                <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
+                                                <div>
+                                                    <span class="btn btn-file btn-primary"><span class="fileupload-new">Ganti</span><span class="fileupload-exists">Ganti</span>{{ form.buku_nikah }}</span>
+                                                    <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload">Batal</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="card shadow">
+                                        <div class="card-header">
+                                            <h2 class="mb-0">NPWP</h2>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="fileupload fileupload-new" data-provides="fileupload">
+                                                <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+                                                    <img src="{{ form.instance.npwp.url }}" alt="" />
+                                                </div>
+                                                <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
+                                                <div>
+                                                    <span class="btn btn-file btn-primary"><span class="fileupload-new">Ganti</span><span class="fileupload-exists">Ganti</span>{{ form.npwp }}</span>
+                                                    <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload">Batal</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="card shadow">
+                                        <div class="card-header">
+                                            <h2 class="mb-0">Keterangan Penghasilan</h2>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="fileupload fileupload-new" data-provides="fileupload">
+                                                <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;"><img src="{{ form.instance.keterangan_penghasilan.url }}" alt="" /></div>
+                                                <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
+                                                <div>
+                                                    <span class="btn btn-file btn-primary"><span class="fileupload-new">Ganti</span><span class="fileupload-exists">Ganti</span>{{ form.keteranganpenghasilan }}</span>
+                                                    <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload">Batal</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="card shadow">
+                                        <div class="card-header">
+                                            <h2 class="mb-0">Foto</h2>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="fileupload fileupload-new" data-provides="fileupload">
+                                                <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;"><img src="{{ form.instance.foto.url }}" alt="" /></div>
+                                                <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
+                                                <div>
+                                                    <span class="btn btn-file btn-primary"><span class="fileupload-new">Ganti</span><span class="fileupload-exists">Ganti</span>{{ form.foto }}</span>
+                                                    <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload">Batal</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="card shadow">
+                                        <div class="card-header">
+                                            <h2 class="mb-0">Rekening Koran</h2>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="fileupload fileupload-new" data-provides="fileupload">
+                                                <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;"><img src="{{ form.instance.rekening_koran.url }}" alt="" /></div>
+                                                <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
+                                                <div>
+                                                    <span class="btn btn-file btn-primary"><span class="fileupload-new">Ganti</span><span class="fileupload-exists">Ganti</span>{{ form.rekening_koran }}</span>
+                                                    <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload">Batal</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="card shadow">
+                                        <div class="card-header">
+                                            <h2 class="mb-0">SK Bekerja</h2>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="fileupload fileupload-new" data-provides="fileupload">
+                                                <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;"><img src="{{ form.instance.sk_bekerja.url }}" alt="" /></div>
+                                                <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
+                                                <div>
+                                                    <span class="btn btn-file btn-primary"><span class="fileupload-new">Ganti</span><span class="fileupload-exists">Ganti</span>{{ form.sk_bekerja }}</span>
+                                                    <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload">Batal</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="card shadow">
+                                        <div class="card-header">
+                                            <h2 class="mb-0">Slip Gaji</h2>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="fileupload fileupload-new" data-provides="fileupload">
+                                                <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;"><img src="{{ form.instance.sliip_gaji.url }}" alt="" /></div>
+                                                <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
+                                                <div>
+                                                    <span class="btn btn-file btn-primary"><span class="fileupload-new">Ganti</span><span class="fileupload-exists">Ganti</span>{{ form.sliip_gaji }}</span>
+                                                    <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload">Batal</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading1">
+                            <h4 class="panel-title1">
+                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion1" href="#collapseFive" aria-expanded="false">Progres</a>
+                            </h4>
+                    </div>
+                        <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-expanded="false">
+                            <div class="row">
+                                <div class="col-xl-6">
+                                    <div class="panel-body ">
+                                        <div class="custom-control custom-checkbox mb-3">
+                                            {{ form.dc }}
+                                            <label class="custom-control-label" for="customCheck1">DC</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox mb-3">
+                                            {{ form.slik }}
+                                            <label class="custom-control-label" for="customCheck2">SLIK</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox mb-3">
+                                            {{ form.wawancara }}
+                                            <label class="custom-control-label" for="customCheck3">Wawancara</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6">
+                                    <div class="panel-body ">
+                                        <div class="custom-control custom-checkbox mb-3">
+                                            {{ form.ots }}
+                                            <label class="custom-control-label" for="customCheck4">OTS</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox mb-3">
+                                            {{ form.sp3k }}	
+                                            <label class="custom-control-label" for="customCheck5">SP3K</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox mb-3">
+                                            {{ form.akad }}
+                                            <label class="custom-control-label" for="customCheck6">Akad</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+</div>            

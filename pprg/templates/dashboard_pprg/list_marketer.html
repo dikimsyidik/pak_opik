@@ -1,0 +1,78 @@
+{% extends 'dashboard_pprg/base.html' %}
+{% block content %}
+
+						<!-- Page content -->
+						<div class="container-fluid pt-8">
+							<div class="page-header mt-0 shadow p-3">
+								<ol class="breadcrumb mb-sm-0">
+									<li class="breadcrumb-item"><a href="#">Home</a></li>
+									<li class="breadcrumb-item active" aria-current="page">Social Dashboard</li>
+								</ol>
+
+							</div>
+								<!-- cards -->
+
+
+		
+							<div class="row">
+								<div class="col-xl-12 ">
+									<div class="card shadow">
+										<div class="card-header bg-transparent border-bottom-0">
+											<div class="row align-items-center">
+												<div class="col">
+													<h6 class="text-uppercase text-light ls-1 mb-1">Details</h6>
+													<h2 class="mb-0">Data Marketer</h2>
+												</div>
+												<div style="text-align: left;"class="col">
+												<form method="GET">
+												<div class="row gutters-xs">
+													<div class="col">
+														<input name="q" type="text" class="form-control" placeholder="Search for...">
+													</div>
+												</div>
+												</form>
+												</div>
+												<div style="text-align: right;" class="col">
+													<a href="{% url 'tambah_marketer' %}"><button class="btn btn-success">Tambah Marketer</button> </a>
+													
+												</div>
+											</div>
+										</div>
+										<div class="emp-tab">
+											<div class="table-responsive">
+												<table class="table  table-hover table-striped text-nowrap">
+													<thead class="text-default">
+														<tr>
+															<th>User ID</th>
+															<th>Nama</th>
+															<th>No Telepon</th>
+															<th>Email</th>
+														 
+															
+														</tr>
+													</thead>
+													<tbody>
+														{% for cost in list_marketer %}
+														<tr>
+															<td>{{ cost.id }}</td>
+															<td><a href="laporan/{{ cost.slug }}"> {{ cost.nama }}</a></td>
+															<td>{{ cost.no_hp }}</td>
+															<td>{{ cost.email }}</td>
+															<td> <a href="hapus/{{ cost.slug }}">Hapus</a> </td>
+													
+														</tr>
+														{% endfor %}
+
+													</tbody>
+												</table>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+	<!-- Back to top -->
+	<a href="#top" id="back-to-top"><i class="fa fa-angle-up"></i></a>
+
+{% endblock %}
+

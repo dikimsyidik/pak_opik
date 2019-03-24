@@ -1,0 +1,76 @@
+{% extends 'dashboard_rancapari/base.html' %}
+{% block content %}
+
+						<!-- Page content -->
+						<div class="container-fluid pt-8">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="card-box card shadow">
+										<div class="card-body border-bottom">
+											<div class="clearfix">
+												<div class="float-left">
+													<h3 class="logo mb-0">LAPORAN</h3>
+												</div>
+												<div class="float-right">
+													<h3 class="mb-0">{{ tanggal }}</h3>
+												</div>
+											</div>
+										</div>
+										<div class="card-body">
+											<div class="mb-0">
+												<!-- end row -->
+
+												<div class="row mt-4" >
+													<div class="col-md-12">
+														<div class="table-responsive">
+															<table class="table table-bordered m-t-30 text-nowrap">
+																<tbody style="text-align: center;">
+																	<tr>
+																		<th style="font-weight: bold; width: 5%">NO</th>
+																		<th style="font-weight: bold; width: 35%">NAMA</th>
+																		<th style="font-weight: bold; width: 30%">KAVLING</th>
+																		<th style="font-weight: bold; width: 30%">PROGRESS KPR</th>
+																	</tr>
+																	{% for kos in kostumer %}
+																	<tr>
+																		<td>{{ forloop.counter }}</td>
+																		<td>{{ kos.nama }}</td>
+																		<td>{{ kos.kavling }} </td>
+																		<td>
+																		{% if kos.akad %}
+																		Akad
+																		{% elif kos.sp3k %}
+																		SP3K
+																		{% elif kos.ots %}
+																		OTS
+																		{% elif kos.wawancara %}
+																		WAWANCARA
+																		{% elif kos.slik %}
+																		SLIK
+																		{% elif kos.dc %}
+																		DC
+
+																		{% endif %}
+																		</td>
+																	</tr>
+																	{% endfor %}
+																</tbody>
+															</table>
+														</div>
+													</div>
+												</div>
+												<hr>
+												<div class="d-print-none">
+													<div class="float-right">
+														<a href="javascript:window.print()" class="btn btn-primary"><i class="fa fa-print"></i> print</a>
+													</div>
+													<div class="clearfix"></div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- end row -->
+						</div>
+{% endblock %}

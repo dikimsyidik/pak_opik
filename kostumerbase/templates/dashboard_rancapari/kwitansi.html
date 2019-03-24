@@ -1,0 +1,95 @@
+{% extends 'dashboard_rancapari/base.html' %}
+{% block content %}
+
+						<!-- Page content -->
+						<div class="container-fluid pt-8">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="card-box card shadow">
+										<div class="card-body border-bottom">
+											<div class="clearfix">
+												<div class="float-left">
+													<h3 class="logo mb-0">KWITANSI BUKTI PEMBAYARAN</h3>
+												</div>
+												<div class="float-right">
+													<h3 class="mb-0">NO. {{ obj.kavling }}/ {{ tanggal }}</h3>
+												</div>
+											</div>
+										</div>
+										<div class="card-body">
+											<div class="mb-0">
+												<h4><strong> TELAH DITERIMA UANG DARI</strong> </h4>
+												<!-- end row -->
+
+												<div class="row mt-4" >
+													<div class="col-md-12">
+														<div class="table-responsive">
+															<table class="table table-bordered m-t-30 text-nowrap">
+																<tbody>
+																	<tr>
+																		<th style="width: 100px; border-radius:">NAMA</th>
+																		<td style="width: 20px;"><strong>:</strong></td>
+																		<td> {{ obj.nama | title }} </td>
+																	</tr>
+																	<tr>
+																		<th>ALAMAT</th>
+																		<td><strong>:</strong></td>
+																		<td>{{ obj.alamat | title}}</td>
+																	</tr>
+																	<tr>
+																		<th>SEBESAR</th>
+																		<td><strong>:</strong></td>
+																		<td> Rp.  {{ dp }}</td>
+																	</tr>
+																	<tr>
+																		<th>UNTUK PEMBAYARAN</th>
+																		<td><strong>:</strong></td>
+																		<td>Uang Muka Pembelian Rumah Talaga Pesona Intan</td>
+																	</tr>
+																	<tr>
+																		<th style="border:none"></th>
+																		<td style="border:none"></td>
+																		<td> Kavling  {{ obj.kavling }}</td>
+																	</tr>
+																</tbody>
+															</table>
+														</div>
+													</div>
+												</div>
+												<div class="row mt-5">
+													<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+														<table style="margin:auto; text-align: center">
+																<td style="border: 1px solid black; width: 30px"></td>
+																<th style="border: 1px solid black; width: 120px">TUNAI</th>
+															</tr>
+															<tr>
+																<td style="border: 1px solid black"></td>
+																<th style="border: 1px solid black">TRANSFER</th>
+															</tr>
+															<tr>
+																<td style="border: 1px solid black"></td>
+																<th style="border: 1px solid black">CEK/GIRO</th>
+															</tr>
+														</table>
+													</div>
+													<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6" style="text-align: center;">
+														<h3 class="mb-5">Garut, {{ tanggal }} </h3>
+														<hr style=" border: 3px solid white">
+														<h5 class="mt-4">_________________________________</h5>
+													</div>
+												</div>
+												<hr>
+												<div class="d-print-none">
+													<div class="float-right">
+														<a href="javascript:window.print()" class="btn btn-primary"><i class="fa fa-print"></i> print</a>
+													</div>
+													<div class="clearfix"></div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+{% endblock %}

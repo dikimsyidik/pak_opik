@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
+	<meta name="author" content="Creative Tim">
+
+	<!-- Title -->
+	<title>Pastel Programmer</title>
+
+	<!-- Favicon -->
+	<link href="assets/img/brand/favicon.png" rel="icon" type="image/png">
+
+	<!-- Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800" rel="stylesheet">
+
+	<!-- Icons -->
+	<link href="{% static "assets/css/icons.css" %}" rel="stylesheet">
+
+	<!--Bootstrap.min css-->
+	<link rel="stylesheet" href="{% static "assets/plugins/bootstrap/css/bootstrap.min.css" %}">
+
+	<!-- Ansta CSS -->
+	<link href="{% static "assets/css/dashboard.css" %}" rel="stylesheet" type="text/css">
+
+	<!-- Single-page CSS -->
+	<link href="{% static "assets/plugins/single-page/css/main.css" %}" rel="stylesheet" type="text/css">
+</head>
+
+<body class="bg-gradient-primary">
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100 p-5">
+
+				<form method="POST" style="width: 350px"> {% csrf_token %}
+					<span class="login100-form-title">
+						Tambah Marketer
+					</span>
+
+					<div class="wrap-input100">
+						{{ form.nama }}
+
+					</div>
+
+					<div class="wrap-input100">
+						{{ form.email }}
+
+					</div>
+
+					<div class="wrap-input100">
+						{{ form.no_hp }}
+
+					</div>
+
+					<button class="login100-form-btn btn-primary" type="submit">Tambah</button>
+
+
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!-- Ansta Scripts -->
+	<!-- Core -->
+		<script src="{% static "assets/plugins/jquery/dist/jquery.min.js" %}"></script>
+	<script src="{% static "assets/js/popper.js" %}"></script>
+	<script src="{% static "assets/plugins/bootstrap/js/bootstrap.min.js" %}"></script>
+
+</body>
+
+</html>

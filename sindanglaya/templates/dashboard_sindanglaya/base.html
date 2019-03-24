@@ -1,0 +1,227 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+
+<head>
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+	<meta content="Start your development with a Dashboard for Bootstrap 4." name="description">
+	<meta content="Spruko" name="author">
+
+	<!-- Title -->
+	<title>UJM Group | Usaha Jaya Mandiri </title>
+
+	<!-- Favicon -->
+	<link href="{% static "assets/img/brand/favicon.png" %}" rel="icon" type="image/png">
+
+	<!-- Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800" rel="stylesheet">
+
+	<!-- Icons -->
+	<link href="{% static "assets/css/icons.css" %}" rel="stylesheet">
+
+	<!--Bootstrap.min css-->
+	<link rel="stylesheet" href="{% static "assets/plugins/bootstrap/css/bootstrap.min.css" %}">
+
+	<!-- Dashboard CSS -->
+	<link href="{% static "assets/css/dashboard.css" %}" rel="stylesheet" type="text/css">
+
+	<!-- Tabs CSS -->
+	<link href="{% static "assets/plugins/tabs/style.css" %}" rel="stylesheet" type="text/css">
+
+	<!-- Custom scroll bar css-->
+	<link href="{% static "assets/plugins/customscroll/jquery.mCustomScrollbar.css" %}" rel="stylesheet" />
+
+	<!-- Sidemenu Css -->
+	<link href="{% static "assets/plugins/toggle-sidebar/css/sidemenu.css" %}" rel="stylesheet">
+
+	<!-- form Uploads -->
+    <link href="{% static "assets/plugins/fileuploads/css/dropify.css" %}" rel="stylesheet" type="text/css" />
+
+</head>
+<body class="app sidebar-mini rtl" >
+			<div class="page">
+		<div class="page-main">
+			<!-- Sidebar menu-->
+			<div class="app-sidebar__overlay" data-toggle="sidebar"></div>
+			<aside class="app-sidebar ">
+				<div class="sidebar-img">
+					<a style = ' font-size: 1vw;' class="navbar-brand" href="/">PT Berkah Jaya Bersama</a>
+					<ul class="side-menu">
+						<li class="slide">
+							<a class="side-menu__item active" data-toggle="slide" href="/"><i class="side-menu__icon fe fe-file-text"></i><span class="side-menu__label">Data Konsumen</span></a>
+							<ul class="slide-menu">
+								<li>
+									<a href="{% url 'sindanglaya' %}" class="slide-item">List PNS</a>
+								</li>
+								<li>
+									<a href="{% url 'sindanglaya list swasta' %}" class="slide-item">List Pegawai Swasta</a>
+								</li>
+								<li>
+									<a href="{% url 'sindanglaya list wiraswasta' %}" class="slide-item">List Wiraswasta</a>
+								</li>
+								<li>
+									<a href="{% url 'sindanglaya tambah_pns' %}" class="slide-item">Tambah Konsumen PNS</a>
+								</li>
+								<li>
+									<a href="{% url 'sindanglaya tambah_pegawai_swasta' %}" class="slide-item">Tambah Pegawai Swasta</a>
+								</li>
+								<li>
+									<a href="{% url 'sindanglaya tambah_wiraswasta' %}" class="slide-item">Tambah Wiraswasta</a>
+								</li>
+							</ul>
+						</li>
+						<li class="slide">
+							<a class="side-menu__item" data-toggle="slide" href="/"><i class="side-menu__icon fe fe-home"></i><span class="side-menu__label">Kavling</span></a>
+							<ul class="slide-menu">
+								<li>
+									<a href="{% url 'sindanglaya kavling' %}" class="slide-item">Data Kavling</a>
+								</li>
+								<li>
+									<a href="{% url 'sindanglaya tambah_kavling' %}" class="slide-item">Tambah Kavling</a>
+								</li>
+
+							</ul>
+
+						</li>
+						<li class="slide">
+							<a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fe fe-user"></i><span class="side-menu__label">Marketing</span></a>
+							<ul class="slide-menu">
+								<li>
+									<a href="{% url 'sindanglaya marketer' %}" class="slide-item">List Kegiatan Marketer</a>
+								</li>
+								<li>
+									<a href="{% url 'sindanglaya tambah_marketer' %}" class="slide-item">Tambah Marketer</a>
+								</li>
+							</ul>
+						</li>
+
+						<li class="slide">
+							<a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fe fe fe-file-text"></i><span class="side-menu__label">Rekap Data</span></a>
+							<ul class="slide-menu">
+								<li>
+									<a href="{% url 'sindanglaya laporan' %}" class="slide-item">Laporan KPR</a>
+								</li>
+								<li>
+									<a href="{% url 'sindanglaya dokumen_dan_progress' %}" class="slide-item">Rekap by Dokumen</a>
+								</li>
+								<li>
+									<a href="{% url 'sindanglaya progress_kpr' %}" class="slide-item">Rekap by Progress</a>
+								</li>
+								<li>
+									<a href="{% url 'sindanglaya rekap_akad' %}" class="slide-item">Rekap Akad</a>
+								</li>
+							</ul>
+						</li>
+												<li class="slide">
+							<a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fe fe-log-out"></i><span class="side-menu__label">Log Out</span></a>
+							<ul class="slide-menu">
+								<li>
+									<a href="{% url 'logout' %}" class="slide-item">Log out</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</aside>
+			<!-- Sidebar menu-->
+
+			<!-- app-content-->
+			<div class="app-content ">
+				<div class="side-app">
+					<div class="main-content">
+						<div class="p-2 d-block d-sm-none navbar-sm-search">
+							<!-- Form -->
+							<form class="navbar-search navbar-search-dark form-inline ml-lg-auto">
+								<div class="form-group mb-0">
+									<div class="input-group input-group-alternative">
+
+									</div>
+								</div>
+							</form>
+						</div>
+						<!-- Top navbar -->
+						<nav class="navbar navbar-top  navbar-expand-md navbar-dark" id="navbar-main">
+							<div class="container-fluid">
+								<a aria-label="Hide Sidebar" class="app-sidebar__toggle" data-toggle="sidebar" href="#"></a>
+							</div>
+						</nav>
+						<!-- Top navbar-->
+						{% block content %}
+						{% endblock %}
+
+						<!-- Footer -->
+						<!-- Footer -->
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- app-content-->
+		</div>
+	</div>
+	<!-- Back to top -->
+	<a href="#top" id="back-to-top"><i class="fa fa-angle-up"></i></a>
+
+	<!-- Ansta Scripts -->
+	<!-- Core -->
+	<script src="{% static "assets/plugins/jquery/dist/jquery.min.js" %}"></script>
+	<script src="{% static "assets/js/popper.js" %}"></script>
+	<script src="{% static "assets/plugins/bootstrap/js/bootstrap.min.js" %}"></script>
+
+
+	<script src="{% static "assets/plugins/chart.js/dist/Chart.min.js" %}"></script>
+	<script src="{% static "assets/plugins/chart.js/dist/Chart.extension.js" %}"></script>
+
+	<!-- Data tables -->
+	<script src="{% static "assets/plugins/datatable/jquery.dataTables.min.js" %}"></script>
+	<script src="{% static "assets/plugins/datatable/dataTables.bootstrap4.min.js" %}"></script>
+
+
+	<script src="{% static "assets/plugins/toggle-sidebar/js/sidemenu.js" %}"></script>
+
+	<!-- Custom scroll bar Js-->
+	<script src="{% static "assets/plugins/customscroll/jquery.mCustomScrollbar.concat.min.js" %}"></script>
+
+	<!-- Ansta JS -->
+	<script src="{% static "assets/js/custom.js" %}"></script>
+
+	<!-- Date Picker-->
+
+	<!-- Form wizard js -->
+	<script src="{% static "assets/plugins/bootstrap-wizard/jquery.bootstrap.wizard.js" %}"></script>
+	<script src="{% static "assets/js/wizard.js" %}"></script>
+<script src="{% static "assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js" %}"></script>
+
+	<script>
+		$('.datepicker').datepicker({
+		 showOtherMonths: true,
+		 selectOtherMonths: true
+	   });
+	</script>
+
+	<!-- file uploads js -->
+<script src="{% static "assets/plugins/fileuploads/js/dropify.min.js" %}"></script>
+
+<script src="{% static "dua/assets/plugins/jasny/js/bootstrap-fileupload.js" %}"></script>
+
+    <script>
+		$('.dropify').dropify({
+			messages: {
+				'default': 'Drag and drop a file here or click',
+				'replace': 'Drag and drop or click to replace',
+				'remove': 'Remove',
+				'error': 'Ooops, something wrong appended.'
+			},
+			error: {
+				'fileSize': 'The file size is too big (2M max).'
+			}
+		});
+	</script>
+
+</body>
+
+
+</html>
+

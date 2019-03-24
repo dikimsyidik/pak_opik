@@ -1,0 +1,129 @@
+<style type="text/css">
+th.a{
+	vertical-align: bottom;
+	text-align: center;
+}
+th.a span{
+	-ms-writing-mode:tb-rl;
+	-webkit-writing-mode:vertical-rl;
+	/*width: auto;*/
+	/*height: auto;*/
+	/*-webkit-transform: skewY(20deg); /* Safari 3-8 */*/
+	transform: rotate(0deg);
+	white-space: nowrap;}
+</style>
+{% extends 'dashboard_sindanglaya/base.html' %}
+{% block content %}
+
+						<!-- Page content -->
+						<div class="container-fluid pt-8">
+							<div class="page-header mt-0 shadow p-3">
+								<ol class="breadcrumb mb-sm-0">
+									<li class="breadcrumb-item"><a href="#">Home</a></li>
+									<li class="breadcrumb-item active" aria-current="page">Social Dashboard</li>
+								</ol>
+
+							</div>
+								<!-- cards -->
+
+
+
+							<div class="row">
+								<div class="col-xl-12 ">
+									<div class="card shadow">
+										<div class="card-header bg-transparent border-bottom-0">
+											<div class="row align-items-center">
+												<div class="col">
+													<h6 class="text-uppercase text-light ls-1 mb-1">Details</h6>
+													<h2 class="mb-0">Data Kostumer PNS</h2>
+												</div>
+												<div style="text-align: left;"class="col">
+												<form method="GET">
+												<div class="row gutters-xs">
+													<div class="col">
+														<input name="q" type="text" class="form-control" placeholder="Search for...">
+													</div>
+												</div>
+												</form>
+												</div>
+												<div style="text-align: right;" class="col">
+													<a href="{% url 'sindanglaya tambah_pns' %}"><button class="btn btn-success">Tambah Kostumer</button> </a>
+
+												</div>
+											</div>
+										</div>
+										<div class="emp-tab">
+											<div class="table-responsive">
+												<table class="table  table-hover table-striped text-nowrap">
+													<thead class="text-default">
+														<tr style="text-align: center">
+															<th>No</th>
+															<th>Kavling</th>
+															<th>Nama</th>
+															<th>Tanggal Booking</th>
+															<th class="a" ><span>KTP</span></th>
+															<th class="a"><span>KK </span></th>
+															<th class="a"><span>Buku Nikah </span></th>
+															<th class="a"><span>NPWP </span></th>
+															<th class="a"><span>Ket. Penghasilan </span></th>
+															<th class="a"> <span> Foto </span></th>
+															<th class="a"><span>Rekening Koran </span></th>
+															<th class="a"><span> SK Bekerja </span></th>
+															<th class="a"> <span> Slip Gaji </span></th>
+
+															<th>DC</th>
+															<th>SLIK</th>
+															<th>Wawancara</th>
+															<th>OTS</th>
+															<th>SP3K</th>
+															<th>Akad</th>
+
+															<th>FLPP</th>
+															<th>SPHJ</th>
+														</tr>
+													</thead>
+													<tbody>
+														{% for cost in list_kostumer %}
+														<tr style="text-align: center">
+															<td>{{ forloop.counter }}</td>
+															<td>{{ cost.kavling }}</td>
+															<td> <a href="/sindanglaya/edit/{{ cost.slug }}">{{ cost.nama }}</a></td>
+															<td>{{ cost.timestamp }}</td>
+															<td> {% if cost.ktp == 'tidak_ada.jpg' %}- {% else %}V{% endif %} </td>
+															<td>{% if cost.kartu_keluarga == 'tidak_ada.jpg' %}- {% else %}V{% endif %}</td>
+															<td>{% if cost.buku_nikah == 'tidak_ada.jpg' %}- {% else %}V{% endif %}</td>
+															<td>{% if cost.npwp == 'tidak_ada.jpg' %}- {% else %}V{% endif %}</td>
+															<td>{% if cost.keteranganpenghasilan == 'tidak_ada.jpg' %}- {% else %}V{% endif %}</td>
+															<td>{% if cost.foto == 'tidak_ada.jpg' %}- {% else %}V{% endif %}</td>
+															<td>{% if cost.rekening_koran == 'tidak_ada.jpg' %}- {% else %}V{% endif %}</td>
+															<td>{% if cost.sk_bekerja == 'tidak_ada.jpg' %}- {% else %}V{% endif %}</td>
+															<td>{% if cost.sliip_gaji == 'tidak_ada.jpg' %}- {% else %}V{% endif %}</td>
+
+															<td>{% if cost.dc %} <strong> V </strong><br><small> {{ cost.tanggal_dc }}</small> {% else %}-{% endif %} </td>
+															<td>{% if cost.slik %} <strong> V </strong><br><small> {{ cost.tanggal_slik }}</small> {% else %}-{% endif %} </td>
+															<td>{% if cost.wawancara %} <strong> V </strong><br><small> {{ cost.tanggal_wawancara }}</small> {% else %}-{% endif %} </td>
+															<td>{% if cost.ots %} <strong> V </strong><br><small> {{ cost.tanggal_ots }}</small> {% else %}-{% endif %} </td>
+															<td>{% if cost.sp3k %} <strong> V </strong><br><small> {{ cost.tanggal_sp3k }}</small> {% else %}-{% endif %} </td>
+															<td>{% if cost.akad %} <strong> V </strong><br><small> {{ cost.tanggal_akad }}</small> {% else %}-{% endif %} </td>
+
+															<td> <a href="flpp_print/{{ cost.slug }}"> <i style="font-size: 20px;" class="fe fe-file"></i></a> </td>
+															<td> <a href="sphj_print/{{ cost.slug }}"> <i style="font-size: 20px;" class="fe fe-file"></i></a> </td>
+														</tr>
+														{% endfor %}
+
+													</tbody>
+												</table>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+	<!-- Back to top -->
+	<a href="#top" id="back-to-top"><i class="fa fa-angle-up"></i></a>
+
+{% endblock %}
+
+	<!-- Ansta Scripts -->
+
+	<!-- Core -->

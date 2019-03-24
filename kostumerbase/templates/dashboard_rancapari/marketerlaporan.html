@@ -1,0 +1,78 @@
+{% extends 'dashboard_rancapari/base.html' %}
+{% block content %}
+
+						<!-- Page content -->
+						<div class="container-fluid pt-8">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="card-box card shadow">
+										<div class="card-body border-bottom">
+											<div class="clearfix">
+												<div style="text-align: center;">
+													<h3 class="logo mb-0"><strong>LAPORAN KEGIATAN MARKETER</strong></h3>
+												</div>
+											</div>
+										</div>
+										<div class="card-body">											<!-- end row -->
+
+												<div class="row mt-1" >
+													<div class="col-md-12">
+														<div class="table-responsive">
+															<table class="m-t-30">
+																<tbody>
+																	<tr>
+																		<th style="width: 100px;">NAMA</th>
+																		<td>{{ obj.nama }}</td>
+																	</tr>
+																	<tr>
+																		<th style="width: 100px;">Email</th>
+																		<td>{{ obj.email }}</td>
+																	</tr>
+																</tbody>
+															</table>
+														</div>
+													</div>
+												</div>
+												<!--  -->
+												<div class="row mt-4" >
+													<div class="col-md-12">
+														<div class="table-responsive">
+															<table class="table table-bordered m-t-30 text-nowrap">
+																<tbody>
+																	<tr>
+																		<th style="width: 5px;">No</th>
+																		<th style="width: 120px"><strong>Tanggal</strong></th>
+																		<th style="width: 200px"><strong>Kegiatan</strong></th>
+																		<th><strong>Deskripsi</strong></th>
+
+																	</tr>
+																{% for keg in kegiatan %}
+																	<tr>
+
+																		<td> {{ forloop.counter }} </td>
+																		<td>{{ keg.waktu }} </td>
+																		<td>{{ keg.judul_kegiatan }}</td>
+																		<td> {{ keg.deskripsi }} </td>
+
+																	</tr>
+																		{% endfor %}
+																</tbody>
+															</table>
+														</div>
+													</div>
+												</div>
+												<hr>
+												<div class="d-print-none">
+													<div class="float-right">
+														<a href="javascript:window.print()" class="btn btn-primary"><i class="fa fa-print"></i> print</a>
+													</div>
+													<div class="clearfix"></div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- end row -->
+						</div>
+{% endblock %}
